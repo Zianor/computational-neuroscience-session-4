@@ -17,7 +17,7 @@ def phi(mu,sigma):
 	    upper = (V_thresh -V_leak - mu[n]) / sigma[n] + gamma * s_tau
 	    x = np.linspace(lower,upper,100)
 	    y = np.exp(x**2) * (1 + erf(x))
-	    f[n] = (tau_r + tau_m * np.sqrt(np.pi) * np.trapz(x,y))**-1
+	    f[n] = (tau_r + tau_m * np.sqrt(np.pi) * np.trapz(y,x))**-1
 
 	return f
 
